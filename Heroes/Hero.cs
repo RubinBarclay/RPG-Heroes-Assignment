@@ -26,6 +26,7 @@ namespace RPG_Heroes.Heroes
         public abstract void LevelUp();
         public abstract void Equip(Weapon weapon);
         public abstract void Equip(Armor armor);
+        public abstract int Damage();
 
         public HeroAttribute TotalAttributes()
         {

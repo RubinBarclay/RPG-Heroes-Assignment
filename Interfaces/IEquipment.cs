@@ -9,6 +9,8 @@ namespace RPG_Heroes.Interfaces
 {
     internal interface IEquipment
     {
+        Weapon GetWeapon();
+        List<Armor> GetArmor();
         void AddItem(Slot slot, Item item);
         void RemoveItem(Slot slot);
     }

@@ -12,6 +12,11 @@ namespace RPG_Heroes.Heroes
     {
         private readonly Dictionary<Slot, Item> _equipment;
 
+        public Weapon GetWeapon()
+        {
+            return (Weapon)_equipment[Slot.Weapon];
+        }
+
         public List<Armor> GetArmor()
         {
             return (List<Armor>)_equipment.Values.Where((Item item) => item is Armor);

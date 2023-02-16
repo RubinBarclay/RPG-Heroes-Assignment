@@ -55,5 +55,20 @@ namespace RPG_Heroes.Heroes
 
             Equipment.AddItem(armor.Slot, armor);
         }
+
+        public override int Damage()
+        {
+            int damagingAttribute = TotalAttributes().Strength;
+            int weaponDamage = Equipment.GetWeapon().WeaponDamage;
+
+            // How to make weaponDamage equal to 1 if hero has no weapon?
+            // Is there a shorthand like in JS: const dmg = obj?.weaponDamage || 1;
+            //if (weaponDamage == null)
+            //{
+            //    return 1 * (1 + damagingAttribute / 100);
+            //}
+
+            return weaponDamage * (1 + damagingAttribute / 100);
+        }
     }
 }
