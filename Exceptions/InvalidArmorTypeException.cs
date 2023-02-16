@@ -9,12 +9,12 @@ namespace RPG_Heroes.Exceptions
     [Serializable]
     internal class InvalidArmorTypeException : Exception
     {
-        public InvalidArmorTypeException(HeroType HeroType, ArmorType ArmorType)
+        public InvalidArmorTypeException(HeroClass HeroType, ArmorType ArmorType)
             : base(InvalidArmorTypeMessage(HeroType, ArmorType)) { }
 
-        private static string InvalidArmorTypeMessage(HeroType HeroType, ArmorType ArmorType)
+        private static string InvalidArmorTypeMessage(HeroClass HeroClass, ArmorType ArmorType)
         {
-            return $"Hero of type {HeroType} can not equip weapon of type: {ArmorType}";
+            return $"Hero of class {HeroClass} can not equip armor of type: {ArmorType}";
         }
     }
 }

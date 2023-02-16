@@ -12,6 +12,7 @@ namespace RPG_Heroes.Heroes
     {
         public Warrior(string name) : base(name)
         {
+            Class = HeroClass.Warrior;
             LevelAttributes = new HeroAttribute(5, 2, 1); // Use dependency inversion instead, not SOLID!!!
             ValidWeaponTypes = new List<WeaponType>() { WeaponType.Axe, WeaponType.Hammer, WeaponType.Sword };
             ValidArmorTypes = new List<ArmorType>() { ArmorType.Mail, ArmorType.Plate };
@@ -35,7 +36,7 @@ namespace RPG_Heroes.Heroes
 
             if (!ValidWeaponTypes.Contains(weapon.Type))
             {
-                throw new InvalidWeaponTypeException(HeroType.Warrior, weapon.Type);
+                throw new InvalidWeaponTypeException(Class, weapon.Type);
             }
 
             Equipment.AddItem(weapon.Slot, weapon);
@@ -50,7 +51,7 @@ namespace RPG_Heroes.Heroes
 
             if (ValidArmorTypes.Contains(armor.Type))
             {
-                throw new InvalidArmorTypeException(HeroType.Warrior, armor.Type);
+                throw new InvalidArmorTypeException(Class, armor.Type);
             }
 
             Equipment.AddItem(armor.Slot, armor);
@@ -69,6 +70,21 @@ namespace RPG_Heroes.Heroes
             //}
 
             return weaponDamage * (1 + damagingAttribute / 100);
+        }
+
+        public override string Display()
+        {
+            var info = new StringBuilder();
+
+            info.AppendLine($"Name: {Name}");
+            info.AppendLine($"Class: {Class}");
+            info.AppendLine($"Level: {Level}");
+            info.AppendLine($"Strength: {LevelAttributes.Strength}");
+            info.AppendLine($"Dexterity: {LevelAttributes.Dexterity}");
+            info.AppendLine($"Intelligence: {LevelAttributes.Intelligence}");
+            info.AppendLine($"Damage: {Damage()}");
+
+            return info.ToString();
         }
     }
 }

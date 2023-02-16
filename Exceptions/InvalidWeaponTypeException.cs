@@ -9,12 +9,12 @@ namespace RPG_Heroes.Exceptions
     [Serializable]
     internal class InvalidWeaponTypeException : Exception
     {
-        public InvalidWeaponTypeException(HeroType HeroType, WeaponType WeaponType)
+        public InvalidWeaponTypeException(HeroClass HeroType, WeaponType WeaponType)
             : base(InvalidWeaponTypeMessage(HeroType, WeaponType)) { }
 
-        private static string InvalidWeaponTypeMessage(HeroType HeroType, WeaponType WeaponType)
+        private static string InvalidWeaponTypeMessage(HeroClass HeroClass, WeaponType WeaponType)
         {
-            return $"Hero of type {HeroType} can not equip weapon of type: {WeaponType}";
+            return $"Hero of class {HeroClass} can not equip weapon of type: {WeaponType}";
         }
     }
 }

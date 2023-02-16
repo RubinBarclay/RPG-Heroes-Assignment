@@ -1,4 +1,4 @@
-﻿enum HeroType
+﻿enum HeroClass
 {
     Mage,
     Ranger,

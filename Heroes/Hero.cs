@@ -11,6 +11,7 @@ namespace RPG_Heroes.Heroes
     abstract class Hero
     {
         public string Name { get; set; }
+        public HeroClass Class { get; set; }
         public int Level { get; set; }
         public HeroAttribute? LevelAttributes { get; set; }
         public Equipment? Equipment { get; set; }
@@ -27,6 +28,7 @@ namespace RPG_Heroes.Heroes
         public abstract void Equip(Weapon weapon);
         public abstract void Equip(Armor armor);
         public abstract int Damage();
+        public abstract string Display();
 
         public HeroAttribute TotalAttributes()
         {
