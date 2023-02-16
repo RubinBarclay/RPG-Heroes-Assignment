@@ -19,5 +19,12 @@ namespace RPG_Heroes.Heroes
             Dexterity = dexterity;
             Intelligence = intelligence;
         }
+
+        public void Increment(int strength, int dexterity, int intelligence)
+        {
+            Strength += strength;
+            Dexterity += dexterity;
+            Intelligence += intelligence;
+        }
     }
 }
