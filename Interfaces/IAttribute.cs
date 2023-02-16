@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Interfaces
 {
-    internal interface IHeroAttribute
+    internal interface IAttribute
     {
         int Strength { get; }
         int Dexterity { get; }

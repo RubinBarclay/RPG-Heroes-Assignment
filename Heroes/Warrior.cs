@@ -13,6 +13,7 @@ namespace RPG_Heroes.Heroes
         public Warrior(string name) : base(name)
         {
             Class = HeroClass.Warrior;
+            Equipment = new Equipment();
             LevelAttributes = new HeroAttribute(5, 2, 1); // Use dependency inversion instead, not SOLID!!!
             ValidWeaponTypes = new List<WeaponType>() { WeaponType.Axe, WeaponType.Hammer, WeaponType.Sword };
             ValidArmorTypes = new List<ArmorType>() { ArmorType.Mail, ArmorType.Plate };
@@ -60,14 +61,7 @@ namespace RPG_Heroes.Heroes
         public override int Damage()
         {
             int damagingAttribute = TotalAttributes().Strength;
-            int weaponDamage = Equipment.GetWeapon().WeaponDamage;
-
-            // How to make weaponDamage equal to 1 if hero has no weapon?
-            // Is there a shorthand like in JS: const dmg = obj?.weaponDamage || 1;
-            //if (weaponDamage == null)
-            //{
-            //    return 1 * (1 + damagingAttribute / 100);
-            //}
+            int weaponDamage = Equipment.GetWeapon()?.WeaponDamage ?? 1; // If no weapon is equied aka is null, set damage to 1
 
             return weaponDamage * (1 + damagingAttribute / 100);
         }

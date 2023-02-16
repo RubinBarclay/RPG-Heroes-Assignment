@@ -14,7 +14,7 @@ namespace RPG_Heroes.Heroes
         public HeroClass Class { get; set; }
         public int Level { get; set; }
         public HeroAttribute? LevelAttributes { get; set; }
-        public Equipment? Equipment { get; set; }
+        public Equipment Equipment { get; set; }
         public List<WeaponType>? ValidWeaponTypes { get; set; }
         public List<ArmorType>? ValidArmorTypes { get; set; }
 
