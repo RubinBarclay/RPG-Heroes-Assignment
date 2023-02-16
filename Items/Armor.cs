@@ -10,6 +10,6 @@ namespace RPG_Heroes.Items
     internal class Armor : Item
     {
         public ArmorType Type { get; set; }
-        HeroAttribute ArmorAttribute { get; set; }
+        public HeroAttribute ArmorAttribute { get; set; }
     }
 }

@@ -10,7 +10,12 @@ namespace RPG_Heroes.Heroes
 {
     internal class Equipment : IEquipment
     {
-        private readonly Dictionary<Slot, Item?> _equipment;
+        private readonly Dictionary<Slot, Item> _equipment;
+
+        public List<Armor> GetArmor()
+        {
+            return (List<Armor>)_equipment.Values.Where((Item item) => item is Armor);
+        }
 
         public void AddItem(Slot slot, Item item)
         {

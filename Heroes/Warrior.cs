@@ -20,7 +20,7 @@ namespace RPG_Heroes.Heroes
         public override void LevelUp()
         {
             // Increase attributes by specified amount
-            LevelAttributes.Increment(5, 2, 1);
+            LevelAttributes.Increment(3, 2, 1);
 
             // Increase level by 1
             Level++;
