@@ -12,12 +12,12 @@ namespace RPG_Heroes.Heroes
     {
         private readonly Dictionary<Slot, Item?> _equipment;
 
-        public void Equip(Slot slot, Item item)
+        public void AddItem(Slot slot, Item item)
         {
             _equipment.Add(slot, item);
         }
 
-        public void Unequip(Slot slot)
+        public void RemoveItem(Slot slot)
         {
             _equipment.Remove(slot);
         }

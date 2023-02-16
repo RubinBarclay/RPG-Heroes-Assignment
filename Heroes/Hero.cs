@@ -20,8 +20,11 @@ namespace RPG_Heroes.Heroes
         public Hero(string name)
         {
             Name = name;
+            Level = 1;
         }
 
         public abstract void LevelUp();
+        public abstract void Equip(Weapon weapon);
+        public abstract void Equip(Armor armor);
     }
 }

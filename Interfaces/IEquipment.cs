@@ -9,7 +9,7 @@ namespace RPG_Heroes.Interfaces
 {
     internal interface IEquipment
     {
-        void Equip(Slot slot, Item item);
-        void Unequip(Slot slot);
+        void AddItem(Slot slot, Item item);
+        void RemoveItem(Slot slot);
     }
 }

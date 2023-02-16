@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Items
 {
-    internal class Armor
+    internal class Armor : Item
     {
-        ArmorType Type { get; set; }
+        public ArmorType Type { get; set; }
         HeroAttribute ArmorAttribute { get; set; }
     }
 }
