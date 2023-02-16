@@ -10,7 +10,15 @@ namespace RPG_Heroes.Heroes
 {
     internal class Equipment : IEquipment
     {
-        private readonly Dictionary<Slot, Item> _equipment;
+        private readonly Dictionary<Slot, Item?> _equipment = new();
+
+        public Equipment()
+        {
+            _equipment.Add(Slot.Weapon, null);
+            _equipment.Add(Slot.Head, null);
+            _equipment.Add(Slot.Body, null);
+            _equipment.Add(Slot.Legs, null);
+        }
 
         public Weapon GetWeapon()
         {
@@ -24,7 +32,7 @@ namespace RPG_Heroes.Heroes
 
         public void AddItem(Slot slot, Item item)
         {
-            _equipment.Add(slot, item);
+            _equipment[slot] = item;
         }
 
         public void RemoveItem(Slot slot)
