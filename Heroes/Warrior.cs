@@ -14,7 +14,7 @@ namespace RPG_Heroes.Heroes
         {
             Class = HeroClass.Warrior;
             Equipment = new Equipment();
-            LevelAttributes = new HeroAttribute(5, 2, 1); // Use dependency inversion instead, not SOLID!!!
+            LevelAttributes = new HeroAttribute(5, 2, 1);
             ValidWeaponTypes = new List<WeaponType>() { WeaponType.Axe, WeaponType.Hammer, WeaponType.Sword };
             ValidArmorTypes = new List<ArmorType>() { ArmorType.Mail, ArmorType.Plate };
         }
@@ -50,7 +50,7 @@ namespace RPG_Heroes.Heroes
                 throw new InvalidArmorLevelException();
             }
 
-            if (ValidArmorTypes.Contains(armor.Type))
+            if (!ValidArmorTypes.Contains(armor.Type))
             {
                 throw new InvalidArmorTypeException(Class, armor.Type);
             }
@@ -58,13 +58,17 @@ namespace RPG_Heroes.Heroes
             Equipment.AddItem(armor.Slot, armor);
         }
 
-        public override int Damage()
-        {
-            int damagingAttribute = TotalAttributes().Strength;
-            int weaponDamage = Equipment.GetWeapon()?.WeaponDamage ?? 1; // If no weapon is equied aka is null, set damage to 1
-
-            return weaponDamage * (1 + damagingAttribute / 100);
+        public override int Damage() {
+            throw new Exception();
         }
+
+        //public override int Damage()
+        //{
+        //    int damagingAttribute = TotalAttributes().Strength;
+        //    int weaponDamage = Equipment.GetWeapon()?.WeaponDamage ?? 1; // If no weapon is equied aka is null, set damage to 1
+
+        //    return weaponDamage * (1 + damagingAttribute / 100);
+        //}
 
         public override string Display()
         {

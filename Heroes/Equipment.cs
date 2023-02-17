@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace RPG_Heroes.Heroes
 {
@@ -20,14 +21,29 @@ namespace RPG_Heroes.Heroes
             _equipment.Add(Slot.Legs, null);
         }
 
-        public Weapon GetWeapon()
+        public Item GetItem(Slot slot)
         {
-            return (Weapon)_equipment[Slot.Weapon];
+            return _equipment[slot];
         }
 
-        public List<Armor> GetArmor()
+        public Item GetWeapon()
         {
-            return (List<Armor>)_equipment.Values.Where((Item item) => item is Armor);
+            return _equipment[Slot.Weapon];
+        }
+
+        public List<Item> GetArmor()
+        {
+            var armorList = new List<Item>();
+
+            foreach (KeyValuePair<Slot, Item?> armor in _equipment)
+            {
+                if (armor.Value is Armor)
+                {
+                    armorList.Add(armor.Value);
+                }
+            }
+
+            return armorList;
         }
 
         public void AddItem(Slot slot, Item item)
