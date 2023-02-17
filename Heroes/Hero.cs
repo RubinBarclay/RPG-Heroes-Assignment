@@ -32,16 +32,6 @@ namespace RPG_Heroes.Heroes
 
         public HeroAttribute TotalAttributes()
         {
-            //var armorStrengthBonus = Equipment.GetArmor().Sum((Armor armor) => armor.ArmorAttribute.Strength); 
-            //var armorDexterityBonus  = Equipment.GetArmor().Sum((Armor armor) => armor.ArmorAttribute.Dexterity); 
-            //var armorIntelligenceBonus = Equipment.GetArmor().Sum((Armor armor) => armor.ArmorAttribute.Intelligence);
-
-            //var totalStrength = LevelAttributes.Strength + armorStrengthBonus;
-            //var totalDexterity = LevelAttributes.Dexterity + armorDexterityBonus;
-            //var totalIntelligence = LevelAttributes.Intelligence + armorIntelligenceBonus;
-
-            //var totalAttributes = new HeroAttribute(totalStrength, totalDexterity, totalIntelligence);
-
             var totalAttributes = new HeroAttribute(LevelAttributes.Strength, LevelAttributes.Dexterity, LevelAttributes.Intelligence);
 
             foreach (Item armor in Equipment.GetArmor())
