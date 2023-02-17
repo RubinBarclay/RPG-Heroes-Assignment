@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="RPG Heroes Tests\**" />
+    <EmbeddedResource Remove="RPG Heroes Tests\**" />
+    <None Remove="RPG Heroes Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 	<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
   	  <_Parameter1>RPGHeroesTests</_Parameter1>
     </AssemblyAttribute>
