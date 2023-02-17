@@ -20,11 +20,6 @@ namespace RPG_Heroes.Heroes
             Intelligence = intelligence;
         }
 
-        public int Total()
-        {
-            return Strength + Dexterity + Intelligence;
-        }
-
         public void Increment(int strength, int dexterity, int intelligence)
         {
             Strength += strength;

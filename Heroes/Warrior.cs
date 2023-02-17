@@ -58,14 +58,16 @@ namespace RPG_Heroes.Heroes
             Equipment.AddItem(armor.Slot, armor);
         }
 
-        public override int Damage()
+        public override double Damage()
         {
-            int damagingAttribute = TotalAttributes().Strength;
+            double damagingAttribute = Convert.ToDouble(TotalAttributes().Strength);
 
             Weapon? currentWeapon = (Weapon)Equipment.GetWeapon();
-            int weaponDamage = currentWeapon?.WeaponDamage ?? 1; // If no weapon is equiped aka is null, set damage to 1
+            double weaponDamage = currentWeapon?.WeaponDamage ?? 1; // If no weapon is equiped aka is null, set damage to 1
 
-            return weaponDamage * (1 + damagingAttribute / 100);
+            double damage = Convert.ToDouble(weaponDamage) * (1.0 + damagingAttribute / 100.0);
+
+            return Math.Round(damage, 2);
         }
 
         public override string Display()
