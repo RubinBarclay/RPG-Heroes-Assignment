@@ -142,12 +142,12 @@ namespace RPGHeroesTests
         public void Rogue_EquipArmor_ShouldReplaceArmorWithNewArmor()
         {
             // Arrange
-            var expected = new Armor("Basic Mail Armor", 1, Slot.Body, ArmorType.Mail, new ArmorAttribute(0, 0, 3));
+            var expected = new Armor("Basic Mail Armor", 1, Slot.Body, ArmorType.Mail, new ArmorAttribute(1, 2, 0));
 
             // Act
             var rogue = new Rogue("John");
             var firstArmor = new Armor("Basic Leather armor", 1, Slot.Body, ArmorType.Leather, new ArmorAttribute(0, 2, 0));
-            var secondArmor = new Armor("Basic Mail Armor", 1, Slot.Body, ArmorType.Mail, new ArmorAttribute(0, 0, 3));
+            var secondArmor = new Armor("Basic Mail Armor", 1, Slot.Body, ArmorType.Mail, new ArmorAttribute(1, 2, 0));
 
             rogue.Equip(firstArmor);
             rogue.Equip(secondArmor);
@@ -174,7 +174,7 @@ namespace RPGHeroesTests
         {
             // Arrange
             var rogue = new Rogue("John");
-            var premiumMailArmor = new Armor("Premium Mail Armor", 6, Slot.Body, ArmorType.Mail, new ArmorAttribute(0, 0, 7));
+            var premiumMailArmor = new Armor("Premium Mail Armor", 6, Slot.Body, ArmorType.Mail, new ArmorAttribute(2, 3, 0));
 
             // Act & Assert
             Assert.Throws<InvalidArmorLevelException>(() => rogue.Equip(premiumMailArmor));
