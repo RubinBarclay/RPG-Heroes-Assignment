@@ -61,3 +61,7 @@ To experience the game. Start by cloning the repository:
  ```
  
  Then open it in Visual Studio and run all tests by selecting __Tests > Run all tests__ or by pressing __Ctrl + Shift + A__.
+ 
+ ## License
+
+This project is licensed under the MIT license. See [LICENSE.md](https://github.com/RubinBarclay/RPG-Heroes-Assignment/blob/master/LICENSE.md) for more information.
